@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="StarterApp"> <!--Le aviso a nuestra web que vamos a usar Angular.-->
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Primer web con angular</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+
+</head>
+<!--El nombre de ng-app y de ng-controller tienen que ser distintos-->
+<body ng-controller="AppCtrl">
+  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+    <md-toolbar class="md-tall md-hue-2">
+      <span-flex></span>
+      <div layout="column" class="md-toolbar=tools-bottom inset">
+        <user-avatar></user-avatar>
+        <span></span>
+        <div>Mariana Peralta</div>
+        <div>mariana.peralta@gmail.com</div>
+      </div>
+    </md-toolbar>
+
+  <md-list>
+  <md-item ng-repeat="item in menu">
+    <a>
+      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+        <div class="inset">
+          <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+        </div>
+        <div class="inset">{{item.title}}</div>
+      </md-item-content>
+    </a>
+  </md-item>
+  <md-divider></md-divider>
+  </md-list>
+
+  <md-subheader>Configuración</md-subheader>
+
+  <md-list>
+  <md-item ng-repeat="item in submenu">
+    <a>
+      <md-item-content md-ink-ripple layout="row" layout-align="start center">
+        <div class="inset">
+          <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+        </div>
+        <div class="inset">{{item.title}}</div>
+      </md-item-content>
+    </a>
+  </md-item>
+  <md-divider></md-divider>
+  </md-list>
+  
+  </md-sidenav>
+
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <!-- Angular Icons -->
+  <script src="http://cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
